@@ -1,0 +1,37 @@
+
+<div class="conteiner">
+  <div class="container-fluid">
+    <div class="row justify-content-left row-cols-1 row-cols-sm-1 row-cols-lg-3">
+      <div class="col fordFiesta" (click)="carSelected('fordFiesta')">
+        <img src="../../../assets/img/ford-fiesta.jpg" alt="" width="100%">
+        <button class="btn-danger">Detail View</button>
+      </div>
+      <div class="col fordFiesta" (click)="carSelected('fordFocus')">
+        <img src="../../../assets/img/ford-focus.jpg" alt="" width="100%">
+        <button class="btn-danger">Detail View</button>
+      </div>
+      <div class="col fordFiesta" (click)="carSelected('fordEscape')">
+        <img src="../../../assets/img/ford-escape.jpg" alt="" width="100%">
+        <button class="btn-danger">Detail View</button>
+      </div>
+    </div>
+
+    <div class="carInfo">
+      <div class="wrapper">
+        <div class="carTitle">
+          <p class="carModel">Vehicle: {{producer}} <span > "{{model}}" </span> (speed: {{speed}}km/h)</p>
+        </div>
+        <ul class="carColor">
+          <li>Body: {{carColors.body}}</li>
+          <li>Interior: {{carColors.interior}}</li>
+          <li>Wheels: {{carColors.wheels}}</li>
+        </ul>
+        <p class="titleOptions">Options:</p>
+        <ul class="carOptions">
+          <li class="carOption" *ngFor="let option of carOptions" > "{{ option }}" </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
