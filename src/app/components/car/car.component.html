@@ -33,8 +33,8 @@
       <div class="col-6 alert alert-info">
         <p class="text-primary carModel">Vehicle: {{producer!= null ? producer: ''}} <span > {{model!= null ? model: ''}} </span> (speed: {{speed!= null ? speed: ''}}km/h)</p>
         <ul class="carInfo_ul">
-          <li>Body: {{ carColors.body!= undefined ? carColors.body: ''}}</li>
-          <li>Interior: {{carColors.interior!= undefined ? carColors.interior: '' }}</li>
+          <li>Car Color: {{ carColors.body!= undefined ? carColors.body: ''}}</li>
+          <li>Interior Color: {{carColors.interior!= undefined ? carColors.interior: '' }}</li>
           <li>Wheels: {{carColors.wheels!=  undefined ? carColors.wheels: '' }}</li>
         </ul>
       </div>
@@ -45,14 +45,27 @@
       <div class="col-6 alert alert-info">
         <p class="text-primary editFormTitle">Edit Car Information</p>
         <button (click)="showEditFields()" class="btn btn-danger" type="button">{{btnEditText}}</button>
-        <form *ngIf="isEdit"  class="form-group editForm">
-          <input class="form-control" type="text" placeholder="Car Producer" [(ngModel)]="producer" name="producer" >
-          <input class="form-control" type="text" placeholder="Car Model" [(ngModel)]="model" name="model" >
-          <input class="form-control" type="text" placeholder="Car Speed" [(ngModel)]="speed" name="speed">
-          <input class="form-control" type="text" placeholder="Car Body Color" [(ngModel)]="carColors.body" name="carColors.body">
-          <input class="form-control" type="text" placeholder="Car Interior Color" [(ngModel)]="carColors.interior" name="carColors.interior">
-          <input class="form-control" type="text" placeholder="Car Wheels" [(ngModel)]="carColors.wheels" name="carColors.wheels">
+        <form *ngIf="isEdit" class="form-group editForm">
+
+          <label for="editProducer">Producer</label>
+          <input class="form-control col-9" type="text" id="editProducer" [(ngModel)]="producer" name="producer" >
+
+          <label for="editModel">Model</label>
+          <input class="form-control col-9" type="text" id="editModel" [(ngModel)]="model" name="model" >
+
+          <label for="editSpeed">Speed</label>
+          <input class="form-control col-9" type="text"  id="editSpeed" [(ngModel)]="speed" name="speed">
+
+          <label for="editCarColor">Car Color</label>
+          <input class="form-control col-9" type="text"  id="editCarColor" [(ngModel)]="carColors.body" name="carColors.body">
+
+          <label for="editInteriorColor">Interior Color</label>
+          <input class="form-control col-9" type="text" id="editInteriorColor" [(ngModel)]="carColors.interior" name="carColors.interior">
+
+          <label for="wheelsColors">Wheels</label>
+          <input class="form-control col-9" type="text"  id="wheelsColors" placeholder="Car Wheels" [(ngModel)]="carColors.wheels" name="carColors.wheels">
         </form>
+        <button (click)="saveEditFields( carId, producer, model, speed, carColors)" *ngIf="isEdit" class="btn btn-info" type="button">Save New Informations</button>
       </div>
     </div>
 
@@ -72,7 +85,7 @@
         <ul class="carOptions_ul">
           <li *ngFor="let option of carOptions"  class="carOptions_li col-11">
             "{{ option }}"
-            <button (click)="deleteOption(option)" class="btn btn-outline-danger btn-sm delete-btm">x</button>
+            <button (click)="deleteOption(option)" class="btn btn-danger btn-sm delete-btm">x</button>
           </li>
         </ul>
       </div>

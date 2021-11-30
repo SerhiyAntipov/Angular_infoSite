@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarComponent implements OnInit {
 
+  carId:string;
   producer:string;
   model:string;
   speed:number;
@@ -22,13 +23,14 @@ export class CarComponent implements OnInit {
   }
 
   ngOnInit(){
+    this.carId = 'fordFiesta';
     this.producer = 'Ford';
     this.model = 'Fiesta';
     this.speed = 186;
 
     this.carColors = {
-      body: 'red color',
-      interior: 'yellow color',
+      body: 'red',
+      interior: 'yellow',
       wheels: 'R17 titan'
     }
 
@@ -38,32 +40,35 @@ export class CarComponent implements OnInit {
   carSelected(selectedAuto:string){
 
     if (selectedAuto == "fordFiesta") {
+      this.carId = 'fordFiesta';
       this.producer = 'Ford';
       this.model = 'Fiesta';
       this.speed = 186;
       this.carColors = {
-        body: 'red color',
-        interior: 'yellow color',
+        body: 'red',
+        interior: 'yellow',
         wheels: 'R17 titan'
       }
       this.carOptions = ['ABS', 'ESP', 'ESC']
     }else if (selectedAuto == "fordFocus"){
+      this.carId = 'fordFocus';
       this.producer = 'Ford';
       this.model = 'Focus';
       this.speed = 208;
       this.carColors = {
-        body: 'dark chery color',
-        interior: 'black color',
+        body: 'dark-chery',
+        interior: 'black',
         wheels: 'R19 titan'
       }
       this.carOptions = ['ABS', 'ESP', 'EPAS', 'ESC']
     }else if (selectedAuto == "fordEscape"){
+      this.carId = 'fordEscape';
       this.producer = 'Ford';
       this.model = 'Escape';
       this.speed = 216;
       this.carColors = {
-        body: 'violet-grey color',
-        interior: 'white color',
+        body: 'violet-grey',
+        interior: 'white',
         wheels: 'R21 titan'
       }
       this.carOptions = ['ABS', 'ESP', 'EPAS', 'SYNC', 'ESC']
@@ -87,11 +92,18 @@ export class CarComponent implements OnInit {
   showEditFields(){
     this.isEdit = !this.isEdit
 
-    if (this.isEdit == false){
-      this.btnEditText = 'Show Fields'
-    }else{
-      this.btnEditText = 'Hide Fields'
-    }
+    if (this.isEdit == false) this.btnEditText = 'Show Fields'
+    if (this.isEdit == true) this.btnEditText = 'Hide Fields'
+
+  }
+
+  saveEditFields(carId:string, producer:string, model:string, speed:number, carColors:any){
+    console.log(this.carId)
+    console.log(this.producer)
+    console.log(this.model)
+    console.log(this.speed)
+    console.log(this.carColors)
+
   }
 
 }
