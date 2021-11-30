@@ -19,13 +19,17 @@ export class CarComponent implements OnInit {
   }
 
   ngOnInit(){
+    this.producer = 'Ford';
+    this.model = 'Fiesta';
+    this.speed = 186;
 
     this.carColors = {
-      body: '',
-      interior: '',
-      wheels: ''
+      body: 'red color',
+      interior: 'yellow color',
+      wheels: 'R17 titan'
     }
-    this.carOptions = []
+
+    this.carOptions = ['ABS', 'ESP', 'EPAS', 'SYNC', 'ESC']
   }
 
   carSelected(selectedAuto:string){
@@ -62,8 +66,21 @@ export class CarComponent implements OnInit {
       this.carOptions = ['ABS', 'ESP', 'EPAS', 'SYNC', 'ESC']
     }
 
-
   }
+
+  addNewOptions(newOption:string){
+    this.carOptions.unshift(newOption)
+    return false;
+  }
+
+  deleteOption(option:string){
+    for (let i = 0; i < this.carOptions.length; i++){
+      if (this.carOptions[i] == option){
+        this.carOptions.splice(i, 1)
+      }
+    }
+  }
+
 }
 
 interface carColorsDetail {

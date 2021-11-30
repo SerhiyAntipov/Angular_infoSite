@@ -1,40 +1,31 @@
-.carInfo{
-  padding-top: 20px;
-  border-top: 10px solid red;
-  border-bottom: 10px solid red
+.componentTitle{
+  margin-top: 10px;
 }
 
-.carInfo .wrapper{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.carBtn{
+  margin: 5px;
 }
 
-.btn-danger{
-  width: 20%;
-  margin-left: 40%;
-  position: relative;
-  bottom: 40px;
-}
-
-.titleOptions{
-  margin-bottom: 0px;
-}
-
-.carColor{
+li{
   list-style-type: none;
-  margin-left: 0px;
-  padding-left: 0px;
 }
 
-.carOptions{
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 0px;
-  margin-top: -5px;
-  min-height: 34px;
+.carModel, .carOptions_title{
+  margin-bottom: 5px;
 }
-.carOption{
-  display: inline-block;
-  padding: 5px;
+
+.buttonWrapper{
+  padding: 0;
+}
+.carOptions_ul, .carInfo_ul, .carOptions_li{
+ padding-left: 0;
+}
+
+.delete-btm{
+  font-size: 1em;
+  padding: 3px 3px 7px;
+  line-height: 5px;
+  vertical-align: center;
+  position: absolute;
+  right: -30px;
 }

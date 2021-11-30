@@ -1,37 +1,60 @@
-
-<div class="conteiner">
+<div class="container">
   <div class="container-fluid">
-    <div class="row justify-content-left row-cols-1 row-cols-sm-1 row-cols-lg-3">
-      <div class="col fordFiesta" (click)="carSelected('fordFiesta')">
-        <img src="../../../assets/img/ford-fiesta.jpg" alt="" width="100%">
-        <button class="btn-danger">Detail View</button>
+
+    <div class="row justify-content-center">
+      <h3 class="col-6 text-center text-secondary componentTitle">Sellect car for detail informations</h3>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="buttonWrapper col-2">
+        <button (click)="carSelected('fordFiesta')"class="btn btn-info carBtn">
+          <img src="../../../assets/img/ford-fiesta.jpg" alt="ford-focus img" width="100%">
+          Detail View
+        </button>
       </div>
-      <div class="col fordFiesta" (click)="carSelected('fordFocus')">
-        <img src="../../../assets/img/ford-focus.jpg" alt="" width="100%">
-        <button class="btn-danger">Detail View</button>
+      <div class="buttonWrapper col-2">
+        <button (click)="carSelected('fordFocus')"class="btn btn-info carBtn">
+          <img src="../../../assets/img/ford-focus.jpg" alt="ford-focus img" width="100%">
+          Detail View
+        </button>
       </div>
-      <div class="col fordFiesta" (click)="carSelected('fordEscape')">
-        <img src="../../../assets/img/ford-escape.jpg" alt="" width="100%">
-        <button class="btn-danger">Detail View</button>
+      <div class="buttonWrapper col-2">
+        <button (click)="carSelected('fordEscape')" class="btn btn-info carBtn">
+          <img src="../../../assets/img/ford-escape.jpg" alt="ford-escape img" width="100%">
+          Detail View
+        </button>
       </div>
     </div>
 
-    <div class="carInfo">
-      <div class="wrapper">
-        <div class="carTitle">
-          <p class="carModel">Vehicle: {{producer}} <span > "{{model}}" </span> (speed: {{speed}}km/h)</p>
-        </div>
-        <ul class="carColor">
-          <li>Body: {{carColors.body}}</li>
-          <li>Interior: {{carColors.interior}}</li>
-          <li>Wheels: {{carColors.wheels}}</li>
-        </ul>
-        <p class="titleOptions">Options:</p>
-        <ul class="carOptions">
-          <li class="carOption" *ngFor="let option of carOptions" > "{{ option }}" </li>
+    <div class="row justify-content-center">
+      <div class="col-6 alert alert-info">
+        <p class="text-primary carModel">Vehicle: {{producer!= null ? producer: ''}} <span > {{model!= null ? model: ''}} </span> (speed: {{speed!= null ? speed: ''}}km/h)</p>
+        <ul class="carInfo_ul">
+          <li>Body: {{ carColors.body!= undefined ? carColors.body: ''}}</li>
+          <li>Interior: {{carColors.interior!= undefined ? carColors.interior: '' }}</li>
+          <li>Wheels: {{carColors.wheels!=  undefined ? carColors.wheels: '' }}</li>
         </ul>
       </div>
+    </div>
 
+    <div class="row justify-content-center">
+      <form (submit)="addNewOptions(newOption.value)" class="col-6 form-group row alert alert-info justify-content-between">
+        <label class="text-primary" for="option">Added New Options</label>
+        <input class="form-control col-9" type="text" id="option" value="" placeholder="Input New Options" #newOption>
+        <button class="btn btn-info col-2" type="submit" >Added</button>
+      </form>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="carOptions" class="col-6 alert alert-info">
+        <p class="carOptions_title text-primary">Car options:</p>
+        <ul class="carOptions_ul">
+          <li *ngFor="let option of carOptions"  class="carOptions_li col-11">
+            "{{ option }}"
+            <button (click)="deleteOption(option)" class="btn btn-info btn-sm delete-btm">x</button>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
