@@ -1,11 +1,13 @@
 <div class="container">
   <div class="container-fluid">
 
+    <!-- Component Title -->
     <div class="row justify-content-center">
-      <h3 class="col-6 text-center text-secondary componentTitle">Sellect car for detail informations</h3>
+      <h3 class="col-6 text-center text-secondary componentTitle alert alert-info">Sellect car for detail informations</h3>
     </div>
 
-    <div class="row justify-content-center">
+    <!-- Car Button Group -->
+    <div class="row justify-content-center carButtonGroup">
       <div class="buttonWrapper col-2">
         <button (click)="carSelected('fordFiesta')"class="btn btn-info carBtn">
           <img src="../../../assets/img/ford-fiesta.jpg" alt="ford-focus img" width="100%">
@@ -26,6 +28,7 @@
       </div>
     </div>
 
+    <!-- Car Info -->
     <div class="row justify-content-center">
       <div class="col-6 alert alert-info">
         <p class="text-primary carModel">Vehicle: {{producer!= null ? producer: ''}} <span > {{model!= null ? model: ''}} </span> (speed: {{speed!= null ? speed: ''}}km/h)</p>
@@ -37,24 +40,43 @@
       </div>
     </div>
 
+    <!-- Form For Edit Car Information -->
+    <div class="row justify-content-center">
+      <div class="col-6 alert alert-info">
+        <p class="text-primary editFormTitle">Edit Car Information</p>
+        <button (click)="showEditFields()" class="btn btn-danger" type="button">{{btnEditText}}</button>
+        <form *ngIf="isEdit"  class="form-group editForm">
+          <input class="form-control" type="text" placeholder="Car Producer" [(ngModel)]="producer" name="producer" >
+          <input class="form-control" type="text" placeholder="Car Model" [(ngModel)]="model" name="model" >
+          <input class="form-control" type="text" placeholder="Car Speed" [(ngModel)]="speed" name="speed">
+          <input class="form-control" type="text" placeholder="Car Body Color" [(ngModel)]="carColors.body" name="carColors.body">
+          <input class="form-control" type="text" placeholder="Car Interior Color" [(ngModel)]="carColors.interior" name="carColors.interior">
+          <input class="form-control" type="text" placeholder="Car Wheels" [(ngModel)]="carColors.wheels" name="carColors.wheels">
+        </form>
+      </div>
+    </div>
+
+    <!-- Form For ADD Car Options -->
     <div class="row justify-content-center">
       <form (submit)="addNewOptions(newOption.value)" class="col-6 form-group row alert alert-info justify-content-between">
         <label class="text-primary" for="option">Added New Options</label>
         <input class="form-control col-9" type="text" id="option" value="" placeholder="Input New Options" #newOption>
-        <button class="btn btn-info col-2" type="submit" >Added</button>
+        <button class="btn btn-info col-2" type="submit" >Add</button>
       </form>
     </div>
 
+    <!-- Car Options -->
     <div class="row justify-content-center">
       <div class="carOptions" class="col-6 alert alert-info">
         <p class="carOptions_title text-primary">Car options:</p>
         <ul class="carOptions_ul">
           <li *ngFor="let option of carOptions"  class="carOptions_li col-11">
             "{{ option }}"
-            <button (click)="deleteOption(option)" class="btn btn-info btn-sm delete-btm">x</button>
+            <button (click)="deleteOption(option)" class="btn btn-outline-danger btn-sm delete-btm">x</button>
           </li>
         </ul>
       </div>
     </div>
+
   </div>
 </div>

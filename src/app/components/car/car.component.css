@@ -2,21 +2,27 @@
   margin-top: 10px;
 }
 
-.carBtn{
-  margin: 5px;
-}
-
 li{
   list-style-type: none;
 }
 
-.carModel, .carOptions_title{
+.buttonWrapper{
+  padding: 0;
+  margin-bottom: 17px;
+}
+
+.carButtonGroup .buttonWrapper:not(:last-child){
+  padding-right: 4px!important;
+}
+
+.buttonWrapper button{
+  height: 100%;
+}
+
+.carModel, .carOptions_title, .editFormTitle{
   margin-bottom: 5px;
 }
 
-.buttonWrapper{
-  padding: 0;
-}
 .carOptions_ul, .carInfo_ul, .carOptions_li{
  padding-left: 0;
 }
@@ -28,4 +34,11 @@ li{
   vertical-align: center;
   position: absolute;
   right: -30px;
+}
+
+.editForm {
+  margin-top: 15px;
+}
+.editForm input:not(:last-child) {
+  margin-bottom: 5px;
 }

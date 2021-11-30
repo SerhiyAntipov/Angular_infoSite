@@ -10,9 +10,12 @@ export class CarComponent implements OnInit {
   producer:string;
   model:string;
   speed:number;
-
   carColors:carColorsDetail;
   carOptions:string[];
+  isEdit:boolean = false;
+  btnEditText:string = 'Show Fields'
+
+
   // test:any;
 
   constructor() {
@@ -78,6 +81,16 @@ export class CarComponent implements OnInit {
       if (this.carOptions[i] == option){
         this.carOptions.splice(i, 1)
       }
+    }
+  }
+
+  showEditFields(){
+    this.isEdit = !this.isEdit
+
+    if (this.isEdit == false){
+      this.btnEditText = 'Show Fields'
+    }else{
+      this.btnEditText = 'Hide Fields'
     }
   }
 
