@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {invalid} from "@angular/compiler/src/render3/view/util";
 
 @Component({
   selector: 'app-car',
@@ -6,6 +7,45 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./car.component.css']
 })
 export class CarComponent implements OnInit {
+
+  carData = {
+    fordFiesta:{
+      carId: 'fordFiesta',
+      producer: 'Ford',
+      model:'Fiesta',
+      speed: 186,
+      carColors: {
+        body: 'red',
+        interior: 'yellow',
+        wheels: 'R17 titan'
+      },
+      carOptions: ['ABS', 'ESP', 'ESC']
+    },
+    fordFocus:{
+      carId: 'fordFocus',
+      producer: 'Ford',
+      model:'Focus',
+      speed: 208,
+      carColors: {
+        body: 'dark-chery',
+        interior: 'black',
+        wheels: 'R19 titan'
+      },
+      carOptions: ['ABS', 'ESP', 'SYNC', 'ESC']
+    },
+    fordEscape:{
+      carId: 'fordEscape',
+      producer: 'Ford',
+      model:'Escape',
+      speed: 216,
+      carColors: {
+        body: 'violet-grey',
+        interior: 'white',
+        wheels: 'R21 titan'
+      },
+      carOptions: ['ABS', 'ESP', 'EPAS', 'SYNC', 'ESC']
+    }
+  }
 
   carId:string;
   producer:string;
@@ -15,63 +55,33 @@ export class CarComponent implements OnInit {
   carOptions:string[];
   isEdit:boolean = false;
   btnEditText:string = 'Show Fields'
-
-
   // test:any;
 
   constructor() {
   }
 
   ngOnInit(){
-    this.carId = 'fordFiesta';
-    this.producer = 'Ford';
-    this.model = 'Fiesta';
-    this.speed = 186;
+    this.carId = '';
+    this.producer = '';
+    this.model = '';
 
     this.carColors = {
-      body: 'red',
-      interior: 'yellow',
-      wheels: 'R17 titan'
+      body: '',
+      interior: '',
+      wheels: ''
     }
-
-    this.carOptions = ['ABS', 'ESP', 'EPAS', 'SYNC', 'ESC']
   }
 
   carSelected(selectedAuto:string){
 
-    if (selectedAuto == "fordFiesta") {
-      this.carId = 'fordFiesta';
-      this.producer = 'Ford';
-      this.model = 'Fiesta';
-      this.speed = 186;
-      this.carColors = {
-        body: 'red',
-        interior: 'yellow',
-        wheels: 'R17 titan'
-      }
-      this.carOptions = ['ABS', 'ESP', 'ESC']
-    }else if (selectedAuto == "fordFocus"){
-      this.carId = 'fordFocus';
-      this.producer = 'Ford';
-      this.model = 'Focus';
-      this.speed = 208;
-      this.carColors = {
-        body: 'dark-chery',
-        interior: 'black',
-        wheels: 'R19 titan'
-      }
-      this.carOptions = ['ABS', 'ESP', 'EPAS', 'ESC']
-    }else if (selectedAuto == "fordEscape"){
-      this.carId = 'fordEscape';
-      this.producer = 'Ford';
-      this.model = 'Escape';
-      this.speed = 216;
-      this.carColors = {
-        body: 'violet-grey',
-        interior: 'white',
-        wheels: 'R21 titan'
-      }
-      this.carOptions = ['ABS', 'ESP', 'EPAS', 'SYNC', 'ESC']
+    console.log(typeof selectedAuto)
+    if (selectedAuto == 'fordFiesta' || selectedAuto == 'fordFocus' || selectedAuto == 'fordEscape') {
+      this.carId = this.carData[selectedAuto].carId;
+      this.producer = this.carData[selectedAuto].producer;
+      this.model = this.carData[selectedAuto].model;
+      this.speed = this.carData[selectedAuto].speed;
+      this.carColors = this.carData[selectedAuto].carColors;
+      this.carOptions = this.carData[selectedAuto].carOptions;
     }
 
   }
@@ -98,12 +108,13 @@ export class CarComponent implements OnInit {
   }
 
   saveEditFields(carId:string, producer:string, model:string, speed:number, carColors:any){
-    console.log(this.carId)
-    console.log(this.producer)
-    console.log(this.model)
-    console.log(this.speed)
-    console.log(this.carColors)
 
+    if (carId == 'fordFiesta' || carId == 'fordFocus' || carId == 'fordEscape') {
+      this.carData[carId].producer = producer
+      this.carData[carId].model = model
+      this.carData[carId].speed = speed
+      this.carData[carId].carColors = carColors
+    }
   }
 
 }

@@ -48,22 +48,22 @@
         <form *ngIf="isEdit" class="form-group editForm">
 
           <label for="editProducer">Producer</label>
-          <input class="form-control col-9" type="text" id="editProducer" [(ngModel)]="producer" name="producer" >
+          <input class="form-control col-9" type="text" id="editProducer" placeholder="No Data" [(ngModel)]="producer" name="producer" >
 
           <label for="editModel">Model</label>
-          <input class="form-control col-9" type="text" id="editModel" [(ngModel)]="model" name="model" >
+          <input class="form-control col-9" type="text" id="editModel" placeholder="No Data" [(ngModel)]="model" name="model" >
 
           <label for="editSpeed">Speed</label>
-          <input class="form-control col-9" type="text"  id="editSpeed" [(ngModel)]="speed" name="speed">
+          <input class="form-control col-9" type="text"  id="editSpeed" placeholder="No Data" [(ngModel)]="speed" name="speed">
 
           <label for="editCarColor">Car Color</label>
-          <input class="form-control col-9" type="text"  id="editCarColor" [(ngModel)]="carColors.body" name="carColors.body">
+          <input class="form-control col-9" type="text"  id="editCarColor" placeholder="No Data" [(ngModel)]="carColors.body" name="carColors.body">
 
           <label for="editInteriorColor">Interior Color</label>
-          <input class="form-control col-9" type="text" id="editInteriorColor" [(ngModel)]="carColors.interior" name="carColors.interior">
+          <input class="form-control col-9" type="text" id="editInteriorColor" placeholder="No Data" [(ngModel)]="carColors.interior" name="carColors.interior">
 
           <label for="wheelsColors">Wheels</label>
-          <input class="form-control col-9" type="text"  id="wheelsColors" placeholder="Car Wheels" [(ngModel)]="carColors.wheels" name="carColors.wheels">
+          <input class="form-control col-9" type="text"  id="wheelsColors" placeholder="No Data" [(ngModel)]="carColors.wheels" name="carColors.wheels">
         </form>
         <button (click)="saveEditFields( carId, producer, model, speed, carColors)" *ngIf="isEdit" class="btn btn-info" type="button">Save New Informations</button>
       </div>
