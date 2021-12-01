@@ -1,0 +1,13 @@
+.mainNav a{
+  border: none;
+  margin-left: 5px;
+}
+
+.mainLogo{
+  border-radius: 5px;
+}
+
+.mainNavWrapper{
+ padding-bottom: 5px !important;
+  /*padding-left: 50px !important;*/
+}

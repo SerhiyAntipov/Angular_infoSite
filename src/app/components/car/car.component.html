@@ -3,24 +3,24 @@
 
     <!-- Component Title -->
     <div class="row justify-content-center">
-      <h3 class="col-6 text-center text-secondary componentTitle alert alert-info">Sellect car for detail informations</h3>
+      <h3 class="col-12 col-lg-9 col-xl-12 text-center text-secondary componentTitle alert alert-info">Sellect car for detail informations</h3>
     </div>
 
     <!-- Car Button Group -->
     <div class="row justify-content-center carButtonGroup">
-      <div class="buttonWrapper col-2">
+      <div class="buttonWrapper col-4 col-lg-3 col-xl-4">
         <button (click)="carSelected('fordFiesta')"class="btn btn-info carBtn">
           <img src="../../../assets/img/ford-fiesta.jpg" alt="ford-focus img" width="100%">
           Detail View
         </button>
       </div>
-      <div class="buttonWrapper col-2">
+      <div class="buttonWrapper col-4 col-lg-3 col-xl-4">
         <button (click)="carSelected('fordFocus')"class="btn btn-info carBtn">
           <img src="../../../assets/img/ford-focus.jpg" alt="ford-focus img" width="100%">
           Detail View
         </button>
       </div>
-      <div class="buttonWrapper col-2">
+      <div class="buttonWrapper col-4 col-lg-3 col-xl-4">
         <button (click)="carSelected('fordEscape')" class="btn btn-info carBtn">
           <img src="../../../assets/img/ford-escape.jpg" alt="ford-escape img" width="100%">
           Detail View
@@ -30,7 +30,7 @@
 
     <!-- Car Info -->
     <div class="row justify-content-center">
-      <div class="col-6 alert alert-info">
+      <div class="col-12 col-lg-9 col-xl-12 alert alert-info">
         <p class="text-primary carModel">Vehicle: {{producer!= null ? producer: ''}} <span > {{model!= null ? model: ''}} </span> (speed: {{speed!= null ? speed: ''}}km/h)</p>
         <ul class="carInfo_ul">
           <li>Car Color: {{ carColors.body!= undefined ? carColors.body: ''}}</li>
@@ -42,7 +42,7 @@
 
     <!-- Form For Edit Car Information -->
     <div class="row justify-content-center">
-      <div class="col-6 alert alert-info">
+      <div class="col-12 col-lg-9 col-xl-12 alert alert-info">
         <p class="text-primary editFormTitle">Edit Car Information</p>
         <button (click)="showEditFields()" class="btn btn-danger" type="button">{{btnEditText}}</button>
         <form *ngIf="isEdit" class="form-group editForm">
@@ -71,7 +71,7 @@
 
     <!-- Form For ADD Car Options -->
     <div class="row justify-content-center">
-      <form (submit)="addNewOptions(newOption.value)" class="col-6 form-group row alert alert-info justify-content-between">
+      <form (submit)="addNewOptions(newOption.value)" class="col-12 col-lg-9 col-xl-12 form-group row alert alert-info justify-content-between">
         <label class="text-primary" for="option">Added New Options</label>
         <input class="form-control col-9" type="text" id="option" value="" placeholder="Input New Options" #newOption>
         <button class="btn btn-info col-2" type="submit" >Add</button>
@@ -80,7 +80,7 @@
 
     <!-- Car Options -->
     <div class="row justify-content-center">
-      <div class="carOptions" class="col-6 alert alert-info">
+      <div class="carOptions" class="col-12 col-lg-9 col-xl-12 alert alert-info">
         <p class="carOptions_title text-primary">Car options:</p>
         <ul class="carOptions_ul">
           <li *ngFor="let option of carOptions"  class="carOptions_li col-11">

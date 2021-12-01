@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {invalid} from "@angular/compiler/src/render3/view/util";
+import { CarData } from "../../data/carData";
+
 
 @Component({
   selector: 'app-car',
@@ -74,7 +75,7 @@ export class CarComponent implements OnInit {
 
   carSelected(selectedAuto:string){
 
-    console.log(typeof selectedAuto)
+    console.log(selectedAuto)
     if (selectedAuto == 'fordFiesta' || selectedAuto == 'fordFocus' || selectedAuto == 'fordEscape') {
       this.carId = this.carData[selectedAuto].carId;
       this.producer = this.carData[selectedAuto].producer;

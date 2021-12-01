@@ -1,0 +1,50 @@
+.mainFooter{
+  margin-bottom: 20px;
+}
+.mainFooterDescription{
+  margin-bottom: 10px;
+}
+.heading{
+  color: #117a8b
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0
+}
+
+ul>li {
+  padding: 4px;
+  color: #117a8b
+}
+
+ul>li:hover {
+  color: black;
+  cursor: pointer
+}
+
+hr {
+  border-width: 3px
+}
+
+.card {
+  padding: 40px
+}
+
+.social>i {
+  padding: 1%;
+  font-size: 15px
+}
+
+.policy>div {
+  padding: 4px
+}
+
+.divider {
+  border-top: 2px solid
+}
+
+.mainLogo{
+  border-radius: 5px;
+}
