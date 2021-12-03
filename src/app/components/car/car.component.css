@@ -1,61 +1,71 @@
-.componentTitle{
-  margin-top: 10px;
+.container-fluid span,
+.editForm input {
+    color: red;
+    font-weight: bold;
 }
 
-li{
-  list-style-type: none;
+.componentTitle {
+    margin-top: 10px;
 }
 
-.buttonWrapper{
-  padding: 0;
-  margin-bottom: 17px;
+li {
+    list-style-type: none;
 }
 
-.carButtonGroup .buttonWrapper:not(:last-child){
-  padding-right: 4px!important;
+.buttonWrapper {
+    padding: 0;
+    margin-bottom: 17px;
 }
 
-.buttonWrapper button{
-  height: 100%;
+.carButtonGroup .buttonWrapper:not(:last-child) {
+    padding-right: 4px!important;
 }
 
-.carModel, .carOptions_title, .editFormTitle{
-  margin-bottom: 5px;
-  overflow: hidden;
+.buttonWrapper button {
+    height: 100%;
 }
 
-.carOptions_ul, .carInfo_ul, .carOptions_li{
- padding-left: 0;
+.carModel,
+.carOptions_title,
+.editFormTitle {
+    margin-bottom: 5px;
+    overflow: hidden;
 }
 
-.carInfo_ul li{
-  overflow: hidden;
+.carOptions_ul,
+.carInfo_ul,
+.carOptions_li {
+    padding-left: 0;
 }
 
-.delete-btm{
-  font-size: 1em;
-  padding: 3px 3px 7px;
-  line-height: 5px;
-  vertical-align: center;
-  position: absolute;
-  right: -30px;
+.carInfo_ul li {
+    overflow: hidden;
+}
+
+.delete-btm {
+    font-size: 1em;
+    padding: 3px 3px 7px;
+    line-height: 5px;
+    vertical-align: center;
+    position: absolute;
+    right: -30px;
 }
 
 .editForm {
-  margin-top: 15px;
+    margin-top: 15px;
 }
+
 .editForm input:not(:last-child) {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
-
-.editForm input{
-  position: relative;
-  right: -110px;
+.editForm input {
+    position: relative;
+    right: -110px;
 }
 
-.editForm label{
-  position: absolute;
-  left: 20px;
-  margin-top: 7px;
+.editForm label {
+    position: absolute;
+    left: 20px;
+    margin-top: 7px;
 }

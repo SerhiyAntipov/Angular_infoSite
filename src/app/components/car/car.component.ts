@@ -75,7 +75,7 @@ export class CarComponent implements OnInit {
 
   carSelected(selectedAuto:string){
 
-    console.log(selectedAuto)
+    // console.log(selectedAuto)
     if (selectedAuto == 'fordFiesta' || selectedAuto == 'fordFocus' || selectedAuto == 'fordEscape') {
       this.carId = this.carData[selectedAuto].carId;
       this.producer = this.carData[selectedAuto].producer;
@@ -88,8 +88,11 @@ export class CarComponent implements OnInit {
   }
 
   addNewOptions(newOption:string){
-    this.carOptions.unshift(newOption)
-    return false;
+
+    if (this.carId != '' && newOption.length > 0 ){
+      this.carOptions.unshift(newOption)
+    }
+    return false
   }
 
   deleteOption(option:string){
